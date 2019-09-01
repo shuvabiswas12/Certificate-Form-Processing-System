@@ -39,7 +39,6 @@ class Apply extends Database
             $status = $statement->execute($dataArray); // return a boolean value
             $this->storeToAdministration();
             if ($status) {
-                Message::message("Applied! Check Your Email <br>");
                 return true;
             } else {
                 Message::message("Failed! Not Applied.<br>");
@@ -60,7 +59,6 @@ class Apply extends Database
             $status = $statement->execute($dataArray); // return a boolean value
 
             if ($status) {
-                Message::message("Applied! Check Your Email <br>");
                 return true;
             } else {
                 Message::message("Failed! Not Applied.<br>");

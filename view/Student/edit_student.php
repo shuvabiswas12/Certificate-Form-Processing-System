@@ -11,7 +11,6 @@ if (!isset($_SESSION['user_name'])) {
 use \App\Message\Message;
 use \App\Model\Database;
 
-//$id = str_replace("'", '', $_REQUEST['id']);;
 $id = $_REQUEST['id'];
 
 $db = new Database();
@@ -102,7 +101,7 @@ try {
                     </p>
                 </div>
 
-                <form class="form-horizontal" method="post" action="updateStudent.php?id=<?php echo $id; ?>" enctype="multipart/form-data">
+                <form class="form-horizontal" method="post" action="updateStudent.php?id=<?php echo $id; ?>&q=1" enctype="multipart/form-data">
 
                     <div class="col-md-8 col-sm-8 col-xs-12">
                         <p class="student-info-text">Student Details</p>

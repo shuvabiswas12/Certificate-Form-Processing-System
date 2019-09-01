@@ -56,7 +56,13 @@ if ($previous_id == $new_id) {
     } else {
         $student->updateAndStore($_POST, strval($previous_id));
         $new_id = strval($new_id);
-        header("Location: view_student.php?id=$new_id");
+        if (isset($_REQUEST['q'])) {
+            if ($_REQUEST['q'] == 1) {
+                header("Location: view_student.php?id=$new_id&q=1");
+            }
+        } else {
+            header("Location: view_student.php?id=$new_id");
+        }
     }
 }
 

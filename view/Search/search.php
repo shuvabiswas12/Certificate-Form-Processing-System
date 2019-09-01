@@ -11,6 +11,7 @@ if (!isset($_SESSION['user_name'])) {
     header("Location: ../Login/login.php");
 }
 
+
 $data = null;
 $profile_picture = null;
 $apply_warning_class = null;
@@ -36,10 +37,11 @@ function hasId($id, $db) {
     } else {
         return false;
     }
-
 }
 
-if (isset($_POST['check'])) {
+if (isset($_POST['check']) || isset($_REQUEST['id']) ) {
+    $studentID = null;
+
     if (!isset($_POST['student_id']) || trim($_POST['student_id']) == '') {
         header("Location: ../Home/admin.php");
     } else {
@@ -213,7 +215,7 @@ if (isset($_POST['check'])) {
                             <a href="searchController.php?id=<?php echo $studentID?>&q=1" class="btn btn-warning text-capitalize">Delete Student</a>
                         </div>
                         <div class="btns">
-                            <a href="searchController.php?id=<?php echo $studentID?>&q=0" class="btn btn-danger text-capitalize"<?php echo $isBtnActive; ?>>Delete Documents</a>
+                            <a href="searchController.php?id=<?php echo $studentID?>&q=0" class="btn btn-danger text-capitalize"<?php echo $isBtnActive; ?> >Delete Documents</a>
                         </div>
 
                         <div class="thumbnail">

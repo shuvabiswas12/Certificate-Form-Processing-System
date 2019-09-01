@@ -24,7 +24,7 @@ if ($_REQUEST['q'] == 1) {
                             WHERE d.student_id = '$id'";
     try {
         if ($db->delete_Update_Store($delete_docs_query)) {
-            header("Location: search.php");
+            header("Location: search.php?id=$id");
         }
     } catch (PDOException $e) {
         $e->getMessage();
