@@ -25,6 +25,7 @@ $clearance = "hidden";
 $success = "hidden";
 $not_found = 'hidden';
 $div_hidden = '';
+$isShow = 'hidden';
 
 function hasId($id, $db) {
     $checking_query = "SELECT COUNT(student_id) as student FROM `student`s WHERE s.student_id = '$id'";

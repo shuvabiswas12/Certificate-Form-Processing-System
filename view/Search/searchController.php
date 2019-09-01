@@ -17,6 +17,7 @@ if ($_REQUEST['q'] == 1) {
     } catch (PDOException $e) {
         $e->getMessage();
     }
+
 } else {
     $delete_docs_query = "DELETE d.*, p.*, a.* FROM documents d LEFT JOIN project_thesis p ON 
                             d.student_id = p.student_id LEFT JOIN apply a ON d.student_id = a.student_id 
