@@ -31,8 +31,8 @@ class Project extends Database
         if (array_key_exists("supervisorName", $postArray))
             $this->supervisorName = $postArray["supervisorName"];
 
-        if (array_key_exists("supervisorMobileNo", $postArray))
-            $this->supervisorMobileNo = $postArray["supervisorMobileNo"];
+        if (array_key_exists("designation", $postArray))
+            $this->designation = $postArray["designation"];
 
         if (array_key_exists("studentID", $postArray))
             $this->studentID = $postArray["studentID"];
@@ -43,8 +43,8 @@ class Project extends Database
     {
         $this->initVar($postArray);
 
-        $query = "INSERT INTO `project_thesis` (`student_id`, `project_thesis_name`, `supervisor_name`, `supervisor_mobile_no`) VALUES (?,?,?,?)";
-        $dataArray = [$this->studentID, $this->projectTitle, $this->supervisorName, $this->supervisorMobileNo];
+        $query = "INSERT INTO `project_thesis` (`student_id`, `project_thesis_name`, `supervisor_name`, `designation`) VALUES (?,?,?,?)";
+        $dataArray = [$this->studentID, $this->projectTitle, $this->supervisorName, $this->designation];
 
         try {
             $statement = $this->dbconnection->prepare($query); // return a boolean value
