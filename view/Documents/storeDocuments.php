@@ -74,7 +74,7 @@ if (isset($_POST['Submit'])) {
 }
 
 function isEmptyField($post) {
-    if (strlen(trim($post['projectTitle'])) <= 2 && strlen(trim($post["supervisorMobileNo"])) <= 10 && strlen(trim($post['supervisorName'])) <= 2) {
+    if (strlen(trim($post['projectTitle'])) <= 2 && strlen(trim($post['supervisorName'])) <= 2) {
         return true;
     } else {
         return false;
