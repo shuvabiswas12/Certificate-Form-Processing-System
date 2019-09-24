@@ -104,7 +104,7 @@ try {
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <div class="form-group">
                                                     <label for="supervisor-mobile">Designation <span>&ast;</span></label>
-                                                    <input type="text" class="form-control" id="supervisor-mobile" placeholder="Enter your project supervisor designation" name="supervisorMobileNo" required>
+                                                    <input type="text" class="form-control" id="supervisor-mobile" placeholder="Enter your project supervisor designation" name="designation" required>
                                                 </div>
                                             </div>
                                         </div>
