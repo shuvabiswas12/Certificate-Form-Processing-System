@@ -15,7 +15,7 @@ use Exception;
 
 class Documents extends Database
 {
-    private $sscCertificate, $hscCertificate, $bscCertificate, $nid, $certficateFee, $studentID;
+    private $sscCertificate, $hscCertificate, $bscCertificate, $nid, $certificateFee, $studentID, $sscTranscript, $bscTranscript, $hscTranscript;
 
     public function __construct()
     {
@@ -37,10 +37,19 @@ class Documents extends Database
             $this->nid = $postArray["NID"];
 
         if (array_key_exists("Fee", $postArray))
-            $this->certficateFee = $postArray["Fee"];
+            $this->certificateFee = $postArray["Fee"];
 
         if (array_key_exists("studentID", $postArray))
             $this->studentID = $postArray["studentID"];
+
+        if (array_key_exists("SSC-Transcript", $postArray))
+            $this->sscTranscript = $postArray["SSC-Transcript"];
+
+        if (array_key_exists("HSC-Transcript", $postArray))
+            $this->hscTranscript = $postArray["HSC-Transcript"];
+
+        if (array_key_exists("BSC-Transcript", $postArray))
+            $this->bscTranscript = $postArray["BSC-Transcript"];
     }
 
 
@@ -48,8 +57,8 @@ class Documents extends Database
     {
         $this->initVar($postArray);
 
-        $query = "INSERT INTO `documents` (`student_id`, `ssc_certificate`, `hsc_certificate`, `honours_certificate`, `certificate_fee`, `nid`) VALUES (?,?,?,?,?,?)";
-        $dataArray = [$this->studentID, $this->sscCertificate, $this->hscCertificate, $this->bscCertificate, $this->certficateFee, $this->nid];
+        $query = "INSERT INTO `documents` (`student_id`, `ssc_certificate`, `hsc_certificate`, `honours_certificate`, `certificate_fee`, `nid`, `ssc_transcript`, `hsc_transcript`, `bsc_transcript`) VALUES (?,?,?,?,?,?,?,?,?)";
+        $dataArray = [$this->studentID, $this->sscCertificate, $this->hscCertificate, $this->bscCertificate, $this->certificateFee, $this->nid, $this->sscTranscript, $this->hscTranscript, $this->bscTranscript];
 
         try {
             $statement = $this->dbconnection->prepare($query); // return a boolean value
@@ -85,10 +94,5 @@ class Documents extends Database
         return $decision;
     }
 
-
-    public function updateDocuments()
-    {
-
-    }
 
 }

@@ -43,7 +43,7 @@ select {
 select option {
     font-size: 1.2em;
     margin: 5px 0;
-    background-color: #00203FFF;
+    background-color: #f1f8e9;
 }
 .option {
     width: 60%;

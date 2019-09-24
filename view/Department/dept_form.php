@@ -64,8 +64,7 @@ try {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Credits & Results<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin-dashboard.php" class="logout">Home</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -142,7 +141,7 @@ try {
                                                 RESULT <span class="start-mark">&ast;</span>
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" name="result" id="text-box-4" disabled required>
+                                                <input type="text" name="result" value="<?php echo $data['result'] ;?>" id="text-box-4" disabled required>
                                             </div>
                                         </label>
                                     </div>

@@ -57,8 +57,7 @@ $e->getMessage();
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Credits Details<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin-dashboard.php" class="logout">Home</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -195,20 +194,6 @@ $e->getMessage();
                                         echo '--' ;
                                     else
                                         echo $data['credit_waiver'];
-                                    ?>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="row fieldRows">
-                            <div class="col-md-5 col-sm-5 col-xs-5 propertyName">
-                                <p><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp; &nbsp;Course Waiver</p>
-                            </div>
-                            <div class="col-md-offset-1 col-sm-offset-1 col-md-6 col-sm-6 col-xs-7 propertyValue">
-                                <p><?php
-                                    if (empty($data['course_waiver']))
-                                        echo '--';
-                                    else
-                                        echo $data['course_waiver'];
                                     ?>
                                 </p>
                             </div>

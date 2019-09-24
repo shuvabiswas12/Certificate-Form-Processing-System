@@ -72,8 +72,7 @@ try {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Register<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin.php" class="logout">Home</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -117,6 +116,22 @@ try {
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
                             <p><?php echo $dataRow['student_id'] ;?></p>
+                        </div>
+                    </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Father Name<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['father_name'] ;?></p>
+                        </div>
+                    </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Mother Name<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['mother_name'] ;?></p>
                         </div>
                     </div>
                     <div class="row fieldRows">
@@ -185,6 +200,14 @@ try {
                             <p><?php echo $dataRow['supervisor_name'] ;?></p>
                         </div>
                     </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Designation<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['designation'] ;?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -220,6 +243,16 @@ try {
                                 </div>
                             </div>
                             <div class="row">
+                            <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
+                                <div class="checkbox">
+                                    <label class="propertyValue">
+                                        <input type="checkbox" value="1" name="ssc-hsc-bsc-transcript" required>
+                                        Copies of SSC | HSC | BSC Transcript <span class="start-mark">&ast;</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
                                 <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
                                     <div class="checkbox">
                                         <label class="propertyValue">
@@ -233,8 +266,8 @@ try {
                                 <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
                                     <div class="checkbox">
                                         <label class="propertyValue">
-                                            <input type="checkbox" value="1" name="nid">
-                                            Copies of NID/Birth Certificate
+                                            <input type="checkbox" value="1" name="nid" required>
+                                            Copies of NID/Birth Certificate <span class="start-mark">&ast;</span>
                                         </label>
                                     </div>
                                 </div>
@@ -279,33 +312,72 @@ try {
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                <?php
-                                if (!empty($dataRow['hsc_certificate'])) {
-                                    $hsc = $dataRow['hsc_certificate'];
+                            <div class="thumbnail">
+                                <img src="../Documents/Uploads/<?php echo $dataRow['ssc_transcript'] ;?>" alt="..." class="img-responsive" width="600px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <?php
+                            if (!empty($dataRow['hsc_certificate'])) {
+                                $hsc = $dataRow['hsc_certificate'];
 
-                                    echo <<<Tag
+                                echo <<<Tag
                                     <div class="thumbnail">
                                         <img src="../Documents/Uploads/$hsc" alt="..." class="img-responsive" width="600px">
                                     </div>
 Tag;
-                                }
-                                ?>
+                            }
+                            ?>
 
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                                <?php
-                                if (!empty($dataRow['honours_certificate'])) {
-                                    $bsc = $dataRow['honours_certificate'];
+                            <?php
+                            if (!empty($dataRow['hsc_transcript'])) {
+                                $hsc = $dataRow['hsc_transcript'];
 
-                                    echo <<<Tag
+                                echo <<<Tag
+                                    <div class="thumbnail">
+                                        <img src="../Documents/Uploads/$hsc" alt="..." class="img-responsive" width="600px">
+                                    </div>
+Tag;
+                            }
+                            ?>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <?php
+                            if (!empty($dataRow['honours_certificate'])) {
+                                $bsc = $dataRow['honours_certificate'];
+
+                                echo <<<Tag
                                     <div class="thumbnail">
                                         <img src="../Documents/Uploads/$bsc" alt="..." class="img-responsive" width="600px">
                                     </div>
 Tag;
-                                }
-                                ?>
+                            }
+                            ?>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <?php
+                            if (!empty($dataRow['bsc_transcript'])) {
+                                $bsc = $dataRow['bsc_transcript'];
+
+                                echo <<<Tag
+                                    <div class="thumbnail">
+                                        <img src="../Documents/Uploads/$bsc" alt="..." class="img-responsive" width="600px">
+                                    </div>
+Tag;
+                            }
+                            ?>
 
                         </div>
                     </div>

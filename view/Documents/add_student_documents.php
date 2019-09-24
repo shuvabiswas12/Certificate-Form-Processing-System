@@ -68,8 +68,8 @@ try {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Admin <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin-dashboard.php" class="logout">Dashboard</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
+                    <li><a href="../Home/admin.php" class="logout">Dashboard</a></li>
                 </ul>
                 </div>
             </div>
@@ -103,8 +103,8 @@ try {
                                             </div>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
                                                 <div class="form-group">
-                                                    <label for="supervisor-mobile">Mobile <span>&ast;</span></label>
-                                                    <input type="number" class="form-control" id="supervisor-mobile" placeholder="Enter your project supervisor mobile no" name="supervisorMobileNo" required>
+                                                    <label for="supervisor-mobile">Designation <span>&ast;</span></label>
+                                                    <input type="text" class="form-control" id="supervisor-mobile" placeholder="Enter your project supervisor designation" name="supervisorMobileNo" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -123,9 +123,21 @@ try {
                                                 </td>
                                             </tr>
                                             <tr>
+                                                <td>S.S.C Transcript<span>&ast;</span></td>
+                                                <td>
+                                                    <input type="file" id="SSC" name="SSC-Transcript" accept="image/x-png,image/jpeg" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
                                                 <td>H.S.C</td>
                                                 <td>
                                                     <input type="file" name="HSC" id="HSC" accept="image/x-png,image/jpeg">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>H.S.C Transcript</td>
+                                                <td>
+                                                    <input type="file" name="HSC-Transcript" id="HSC" accept="image/x-png,image/jpeg">
                                                 </td>
                                             </tr>
                                             <tr>
@@ -135,9 +147,15 @@ try {
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td>NID / Birth Certificate</td>
+                                                <td>B.S.C Transcript <span>&ast;</span></td>
                                                 <td>
-                                                    <input type="file" name="NID" id="NID" accept="image/x-png,image/jpeg">
+                                                    <input type="file" name="BSC-Transcript" id="BSC" accept="image/x-png,image/jpeg" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>NID / Birth Certificate <span>&ast;</span></td>
+                                                <td>
+                                                    <input type="file" name="NID" id="NID" accept="image/x-png,image/jpeg" required>
                                                 </td>
                                             </tr>
                                             <tr>

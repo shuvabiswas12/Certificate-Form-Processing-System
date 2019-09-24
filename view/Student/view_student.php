@@ -35,6 +35,8 @@ try {
     $yearEnd = $data['year_end'];
     $courseId = $data['course_id'];
     $profilePicture = $data['profile_picture'];
+    $fatherName = $data['father_name'];
+    $motherName = $data['mother_name'];
 
     $courseQuery = "SELECT * FROM `course` WHERE course_id = $courseId";
     $statement = $dbInstance->prepare($courseQuery);
@@ -86,7 +88,7 @@ try {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Admin <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                     <li><a href="../Home/admin.php" class="logout">Dashboard</a></li>
                 </ul>
                 </div>
@@ -159,6 +161,18 @@ try {
                             <label for="yearEnd" class="col-sm-2 control-label">Year End</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control" id="yearEnd" name="yearEnd" value="<?php echo $yearEnd; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="f_name" class="col-sm-2 control-label">Father Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="f_name" name="F-Name" value="<?php echo $fatherName; ?>" readonly>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="m_name" class="col-sm-2 control-label">Mother Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="m_name" name="M-Name" value="<?php echo $motherName; ?>" readonly>
                             </div>
                         </div>
                     </div>

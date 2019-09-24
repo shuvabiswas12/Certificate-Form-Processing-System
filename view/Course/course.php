@@ -61,7 +61,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Admin <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                     <li><a href="../Home/admin.php" class="logout">Dashboard</a></li>
                 </ul>
                 </div>

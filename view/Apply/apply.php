@@ -64,7 +64,7 @@ try {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Admin <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                     <li><a href="../Home/admin.php" class="logout">Dashboard</a></li>
                 </ul>
                 </div>
@@ -85,7 +85,7 @@ try {
                     <div class="img-thumbnail">
                         <img src="../../resources/images/icons/smile.gif" alt="" class="img-responsive">
                     </div>
-                    <p class="h1 red greetings-1">Congratulations!</p>
+<!--                    <p class="h1 red greetings-1">Congratulations!</p>-->
                     <p class="greetings-2">You have successfully filled up your information.</p>
                 </div>
                 <div class="col-md-4 col-sm-12 col-xs-12">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 29, 2019 at 07:47 PM
+-- Generation Time: Sep 24, 2019 at 09:00 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -104,7 +104,10 @@ CREATE TABLE `documents` (
   `hsc_certificate` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `honours_certificate` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `certificate_fee` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `nid` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL
+  `nid` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `ssc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `hsc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `bsc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -170,7 +173,9 @@ CREATE TABLE `student` (
   `course_id` int(12) NOT NULL,
   `year_start` date NOT NULL,
   `year_end` date NOT NULL,
-  `profile_picture` varchar(50) COLLATE utf8_unicode_ci NOT NULL
+  `profile_picture` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `father_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `mother_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -275,19 +280,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `apply`
 --
 ALTER TABLE `apply`
-  MODIFY `apply_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `apply_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `course_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables

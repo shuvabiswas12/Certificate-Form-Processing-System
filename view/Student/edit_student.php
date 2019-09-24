@@ -30,6 +30,8 @@ $selected_course_id = $data['course_id'];
 $yearStart = $data['year_start'];
 $yearEnd = $data['year_end'];
 $picture = $data['profile_picture'];
+$fatherName = $data['father_name'];
+$motherName = $data['mother_name'];
 
 $query = "SELECT * FROM `course`";
 $courseCredit = array();
@@ -80,8 +82,8 @@ try {
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Admin <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin-dashboard.php" class="logout">Dashboard</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
+                    <li><a href="../Home/admin.php" class="logout">Dashboard</a></li>
                 </ul>
                 </div>
             </div>
@@ -193,6 +195,26 @@ Tag;
                                     <label for="yearEnd" class="col-sm-4 control-label">Year End</label>
                                     <div class="col-sm-8">
                                         <input type="date" class="form-control" id="yearEnd" value="<?php echo $yearEnd ; ?>" name="yearEnd" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="f_name" class="col-sm-4 control-label">Father Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="f_namae" value="<?php echo $fatherName ; ?>" name="F-Name" required>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="m_name" class="col-sm-4 control-label">Mother Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="m_name" value="<?php echo $motherName ; ?>" name="M-Name" required>
                                     </div>
                                 </div>
                             </div>

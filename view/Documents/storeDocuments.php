@@ -16,7 +16,7 @@ use \App\ProjectThesis\Project;
 
 $path = "../Documents/Uploads/";
 $studentID = $_GET['id'];
-$documentArray = [1=>'SSC', 2=>'HSC', 3=>'BSC', 4=>'Fee', 5=>'NID'];
+$documentArray = [1=>'SSC', 2=>'HSC', 3=>'BSC', 4=>'Fee', 5=>'NID', 6=>'SSC-Transcript', 7=>'HSC-Transcript', 8=>'BSC-Transcript'];
 
 $document = new Documents();
 $project = new Project();
@@ -34,7 +34,7 @@ if (isset($_POST['Submit'])) {
         }
         else {
 
-            for ($i = 1; $i<=5; $i++) {
+            for ($i = 1; $i<=8; $i++) {
                 $imageFile = $documentArray[$i];
 
                 if (isUpload($_FILES, $imageFile)) {

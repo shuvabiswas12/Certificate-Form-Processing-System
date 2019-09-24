@@ -165,6 +165,25 @@ Tag;
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="f_name" class="col-sm-4 control-label">Father Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="f_name" name="F-Name" required placeholder="Your Father Name">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="form-group">
+                                    <label for="m_name" class="col-sm-4 control-label">Mother Name</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="m_name" name="M-Name" required placeholder="Your mother name">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4 col-xs-12">

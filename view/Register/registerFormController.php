@@ -1,15 +1,15 @@
 <?php
 
-use App\Message\Message;
-
 require_once ("../../vendor/autoload.php");
 require_once ("../../mailer.php");
+
+use App\Message\Message;
 
 $register = new \App\Register\Register();
 
 if (isset($_POST['Submit']))
 {
-    if (isset($_POST['ssc-hsc-certificate']) && isset($_POST['fee'])) {
+    if (isset($_POST['ssc-hsc-certificate']) && isset($_POST['ssc-hsc-bsc-transcript']) && isset($_POST['fee'])) {
         $apply_id = $_POST['applyID'];
         $updateQuery = "UPDATE `administrator` SET `register_status` = '-1', `ec_status` = '0' WHERE `administrator`.`apply_id` = $apply_id";
         echo $updateQuery;

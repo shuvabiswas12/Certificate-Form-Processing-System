@@ -8,7 +8,7 @@ use PDOException;
 
 class Credits extends Database
 {
-    private $applyID, $totalCredit, $earnedCredit, $creditWaiver, $courseWaiver, $result;
+    private $applyID, $totalCredit, $earnedCredit, $creditWaiver, $result;
 
     public function __construct()
     {
@@ -29,9 +29,6 @@ class Credits extends Database
         if (array_key_exists('creditWaiver', $postArray))
             $this->creditWaiver = $postArray['creditWaiver'];
 
-        if (array_key_exists('courseWaiver', $postArray))
-            $this->courseWaiver = $postArray['courseWaiver'];
-
         if (array_key_exists('result', $postArray))
             $this->result = $postArray['result'];
     }
@@ -44,10 +41,10 @@ class Credits extends Database
 
         if ($value == 1) {
             $query = "INSERT INTO `credit_details` 
-                    (`apply_id`, `total_credit`, `earned_credit`, `credit_waiver`, `course_waiver`) 
+                    (`apply_id`, `total_credit`, `earned_credit`, `credit_waiver`, `result`) 
                     VALUES (?,?,?,?,?)";
 
-            $dataArray = [$this->applyID, $this->totalCredit, $this->earnedCredit, $this->creditWaiver, $this->courseWaiver];
+            $dataArray = [$this->applyID, $this->totalCredit, $this->earnedCredit, $this->creditWaiver, $this->result];
         }
         else {
             $query = "UPDATE `credit_details` SET `earned_credit` = ?, `credit_waiver` = ?, `result` = ? WHERE `credit_details`.`apply_id` = $this->applyID";

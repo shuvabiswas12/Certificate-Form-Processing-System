@@ -14,7 +14,7 @@ use http\Header;
 class Student extends Database
 {
     private $studentName, $studentId, $dob, $mobileNo, $email,
-            $courseId, $yearStart, $yearEnd, $profilePicture;
+            $courseId, $yearStart, $yearEnd, $profilePicture, $fatherName, $motherName;
 
     public function __construct()
     {
@@ -49,6 +49,12 @@ class Student extends Database
 
         if (array_key_exists("profilePicture", $postArray))
             $this->profilePicture = $postArray["profilePicture"];
+
+        if (array_key_exists("F-Name", $postArray))
+            $this->fatherName = $postArray["F-Name"];
+
+        if (array_key_exists("M-Name", $postArray))
+            $this->motherName = $postArray["M-Name"];
     }
 
 
@@ -57,10 +63,10 @@ class Student extends Database
         $this->initVar($postArray);
 
         $query = "INSERT INTO `student` (`student_id`, `student_name`, `dob`, `mobile_no`, `email`, 
-              `course_id`, `year_start`, `year_end`, `profile_picture`) VALUES (?,?,?,?,?,?,?,?,?)";
+              `course_id`, `year_start`, `year_end`, `profile_picture`, `father_name`, `mother_name`) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
         $dataArray = [$this->studentId, $this->studentName, $this->dob, $this->mobileNo, $this->email,
-            $this->courseId, $this->yearStart, $this->yearEnd, $this->profilePicture];
+            $this->courseId, $this->yearStart, $this->yearEnd, $this->profilePicture, $this->fatherName, $this->motherName];
 
         $statement = $this->dbconnection->prepare($query); // return a boolean value
 
@@ -103,16 +109,16 @@ class Student extends Database
         if ($this->profilePicture !== null) {
 
             $updateQuery = "UPDATE `student` SET `student_id` = ?, `student_name` = ?, `dob` = ?, `mobile_no` = ?, `email` = ?, 
-                        `course_id` = ?, `year_start` = ?, `year_end` = ?, `profile_picture` = ? WHERE `student`.`student_id` = '$id'";
+                        `course_id` = ?, `year_start` = ?, `year_end` = ?, `profile_picture` = ?, `father_name` = ?, `mother_name` = ? WHERE `student`.`student_id` = '$id'";
 
             $dataArray = [$this->studentId, $this->studentName, $this->dob, $this->mobileNo, $this->email,
-                $this->courseId, $this->yearStart, $this->yearEnd, $this->profilePicture];
+                $this->courseId, $this->yearStart, $this->yearEnd, $this->profilePicture, $this->fatherName, $this->motherName];
         } else {
 
             $updateQuery = "UPDATE `student` SET `student_id` = ?, `student_name` = ?, `dob` = ?, `mobile_no` = ?, `email` = ?, 
-                        `course_id` = ?, `year_start` = ?, `year_end` = ? WHERE `student`.`student_id` = '$id'";
+                        `course_id` = ?, `year_start` = ?, `year_end` = ?, `father_name` = ?, `mother_name` = ? WHERE `student`.`student_id` = '$id'";
             $dataArray = [$this->studentId, $this->studentName, $this->dob, $this->mobileNo, $this->email,
-                $this->courseId, $this->yearStart, $this->yearEnd];
+                $this->courseId, $this->yearStart, $this->yearEnd, $this->fatherName, $this->motherName];
         }
         $statement = $this->dbconnection->prepare($updateQuery);
 

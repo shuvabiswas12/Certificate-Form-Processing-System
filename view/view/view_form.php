@@ -116,6 +116,22 @@ try {
                     </div>
                     <div class="row fieldRows">
                         <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Father Name<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['father_name'] ;?></p>
+                        </div>
+                    </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Mother Name<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['mother_name'] ;?></p>
+                        </div>
+                    </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
                             <p>Course<span class="start-mark">&ast;</span></p>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
@@ -181,6 +197,14 @@ try {
                             <p><?php echo $dataRow['supervisor_name'] ;?></p>
                         </div>
                     </div>
+                    <div class="row fieldRows">
+                        <div class="col-md-3 col-sm-4 col-xs-5 propertyName">
+                            <p>Designation<span class="start-mark">&ast;</span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-7 propertyValue">
+                            <p><?php echo $dataRow['designation'] ;?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -213,6 +237,13 @@ try {
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="thumbnail">
+                                <img src="../Documents/Uploads/<?php echo $dataRow['ssc_transcript'] ;?>" alt="..." class="img-responsive" width="600px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                                 <?php
                                 if (!empty($dataRow['hsc_certificate'])) {
                                     $hsc = $dataRow['hsc_certificate'];
@@ -230,8 +261,40 @@ Tag;
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                                 <?php
+                                if (!empty($dataRow['hsc_transcript'])) {
+                                    $hsc = $dataRow['hsc_transcript'];
+
+                                    echo <<<Tag
+                                    <div class="thumbnail">
+                                        <img src="../Documents/Uploads/$hsc" alt="..." class="img-responsive" width="600px">
+                                    </div>
+Tag;
+                                }
+                                ?>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                <?php
                                 if (!empty($dataRow['honours_certificate'])) {
                                     $bsc = $dataRow['honours_certificate'];
+
+                                    echo <<<Tag
+                                    <div class="thumbnail">
+                                        <img src="../Documents/Uploads/$bsc" alt="..." class="img-responsive" width="600px">
+                                    </div>
+Tag;
+                                }
+                                ?>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                                <?php
+                                if (!empty($dataRow['bsc_transcript'])) {
+                                    $bsc = $dataRow['bsc_transcript'];
 
                                     echo <<<Tag
                                     <div class="thumbnail">

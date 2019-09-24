@@ -64,8 +64,7 @@ try {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right menu">
                     <li class="active"><a href="#">Credits Details<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#" class="logout">Log out</a></li>
-                    <li><a href="../Home/admin-dashboard.php" class="logout">Home</a></li>
+                    <li><a href="../Login/logout.php?q=1" class="logout">Log out</a></li>
                 </ul>
             </div>
         </div>
@@ -92,23 +91,8 @@ try {
                                     <div class="checkbox">
                                         <label class="propertyValue">
                                             <div class="col-md-5">
-                                                <input type="checkbox" value="1" id="waiver1">
-                                                Course Waiver
-                                            </div>
-                                            <div class="col-md-6">
-                                                <input type="text" name="courseWaiver" id="text-box-1" disabled>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
-                                    <div class="checkbox">
-                                        <label class="propertyValue">
-                                            <div class="col-md-5">
                                                 <input type="checkbox" value="1" id="waiver2" required>
-                                                Total Credit
+                                                Total Credit &nbsp; &nbsp;
                                             </div>
                                             <div class="col-md-6">
                                                 <input type="text" name="totalCredit" id="text-box-2" value="<?php echo $data['course_credit'] ;?>" disabled readonly>
@@ -117,6 +101,24 @@ try {
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
+
+                                    <div class="checkbox">
+                                        <label class="propertyValue">
+                                            <div class="col-md-5">
+                                                <input type="checkbox" value="1" id="waiver4">
+                                                Waiver Credit
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" name="creditWaiver" id="text-box-4" disabled>
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
                                     <div class="checkbox">
@@ -132,21 +134,24 @@ try {
                                     </div>
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
                                     <div class="checkbox">
                                         <label class="propertyValue">
+
                                             <div class="col-md-5">
-                                                <input type="checkbox" value="1" id="waiver4">
-                                                Waiver Credit
+                                                <input type="checkbox" value="1" id="waiver1" required>
+                                                Result &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
                                             </div>
                                             <div class="col-md-6">
-                                                <input type="text" name="creditWaiver" id="text-box-4" disabled>
+                                                <input type="text" name="result" id="text-box-1" disabled required>
                                             </div>
                                         </label>
                                     </div>
                                 </div>
                             </div>
+
                             <br>
                             <div class="row">
                                 <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-11 col-sm-11 col-xs-11">
