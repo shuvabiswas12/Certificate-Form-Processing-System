@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 24, 2019 at 09:00 AM
+-- Generation Time: Sep 24, 2019 at 04:44 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -88,7 +88,6 @@ CREATE TABLE `credit_details` (
   `total_credit` text COLLATE utf8_unicode_ci NOT NULL,
   `earned_credit` text COLLATE utf8_unicode_ci NOT NULL,
   `credit_waiver` text COLLATE utf8_unicode_ci,
-  `course_waiver` text COLLATE utf8_unicode_ci,
   `result` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -106,7 +105,7 @@ CREATE TABLE `documents` (
   `certificate_fee` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `nid` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ssc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `hsc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `hsc_transcript` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `bsc_transcript` varchar(50) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -142,7 +141,7 @@ CREATE TABLE `project_thesis` (
   `student_id` varchar(12) COLLATE utf8_unicode_ci NOT NULL,
   `project_thesis_name` text COLLATE utf8_unicode_ci NOT NULL,
   `supervisor_name` text COLLATE utf8_unicode_ci NOT NULL,
-  `supervisor_mobile_no` text COLLATE utf8_unicode_ci NOT NULL
+  `designation` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -174,8 +173,8 @@ CREATE TABLE `student` (
   `year_start` date NOT NULL,
   `year_end` date NOT NULL,
   `profile_picture` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `father_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `mother_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+  `father_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `mother_name` varchar(30) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -280,19 +279,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `apply`
 --
 ALTER TABLE `apply`
-  MODIFY `apply_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `apply_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `course_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
