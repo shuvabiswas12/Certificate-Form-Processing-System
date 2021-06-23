@@ -26,7 +26,7 @@ function sendMail($subject, $message, $receiver_email, $receiver_name)
         $mail->Port       = 587;                                    // TCP port to connect to
 
         //Recipients
-        $mail->setFrom('Jh913427@gmail.com', 'Online Certificate-System');
+        $mail->setFrom('put here an valid email.', 'Online Certificate-System');
 
         $mail->addAddress($receiver_email, '');     // Add a recipient
 
