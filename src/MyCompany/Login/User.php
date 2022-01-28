@@ -30,7 +30,8 @@ class User extends Database
 
     public function isUserNameAndPasswordMatch()
     {
-        $query = "SELECT COUNT(user_name) as match_user FROM `user` WHERE user_name = '$this->userName' and password = '$this->password' and login_as = '$this->loginAs'";
+        $query = "SELECT COUNT(user_name) as match_user FROM `user` WHERE user_name = '$this->userName' OR email = '$this->email' and password = '$this->password' and login_as = '$this->loginAs'";
+		
 
         echo "query: $query <br>";
 
