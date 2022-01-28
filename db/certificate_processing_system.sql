@@ -186,7 +186,7 @@ CREATE TABLE `student` (
 CREATE TABLE `user` (
   `user_id` int(12) NOT NULL,
   `user_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `login_as` text COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
