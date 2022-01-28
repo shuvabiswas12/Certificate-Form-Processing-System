@@ -41,7 +41,6 @@ class User extends Database
         if ($data = $statement->fetch())
         {
              $count = $data['match_user'];
-			 dd();
              echo "Count value  = $count <br>";
 
              if ($count == 1) {
